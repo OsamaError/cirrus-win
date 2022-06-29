@@ -1,7 +1,7 @@
 @echo off
 curl --silent -O https://raw.githubusercontent.com/Barento/cirrus-win/main/ngrok.exe
 timeout 2
-ngrok config add-authtoken 1nUH5O5RlHDFfWb1jlBjQmulJD2_37nVZHH6NKzSq9Fd2KGQH
+ngrok config add-authtoken 1vo9YcESx0doMK2XppoFPOhPRCU_6DixNBJZK2Qh4Cv2MPLwN
 timeout 2
 start ngrok.exe tcp --region us 3389
 tzutil /s "SE Asia Standard Time" >nul
@@ -26,5 +26,7 @@ ICACLS C:\Windows\Temp /grant Windows2022:F >nul
 ICACLS C:\Windows\installer /grant Windows2022:F >nul
 ICACLS C:\Windows\Temp /grant Windows2022:F >nul
 ICACLS C:\Windows\installer /grant Windows2022:F >nul
+curl --silent -O https://raw.githubusercontent.com/OsamaError/cirrus-win/main/crd.ps1
+start powershell crd.ps1
 echo Completed! Please check RDP address in ngrok endpoints. https://dashboard.ngrok.com/cloud-edge/endpoints/
 ping -n 99999999999999999999999999999999 10.10.10.10 >nul
